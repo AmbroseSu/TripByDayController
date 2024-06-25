@@ -1,0 +1,63 @@
+#version: "3.8"
+#
+#services:
+#  postgres:
+#    image: postgres
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: sa
+#      POSTGRES_DB: SaiGonByDay
+#    ports:
+#      - "54320:5432"
+#
+#  tripbydayrepository:
+#    build:
+#      context: ./TripByDayRepository
+#    image: tripbydayrepository:latest
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/SaiGonByDay
+#  tripbydayservice:
+#    build:
+#      context: ./TripByDayService
+#    image: tripbydayservice:latest
+#    depends_on:
+#      - tripbydayrepository
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/SaiGonByDay
+#
+#  tripbydaycontroller:
+#    build:
+#      context: ./TripByDayController
+#    image: tripbydaycontroller:latest
+#    depends_on:
+#      - tripbydayservice
+#    ports:
+#      - "8081:8080"
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/SaiGonByDay
+
+
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sa
+      POSTGRES_DB: SaiGonByDay
+    ports:
+      - "54320:5432"
+
+
+  tripbydaycontroller:
+    build:
+      context: ./TripByDayController
+    image: tripbydaycontroller:latest
+    ports:
+       - "8081:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/SaiGonByDay
+
+
+

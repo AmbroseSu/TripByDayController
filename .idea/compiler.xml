@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="tripbydaycontroller" />
+        <module name="tripbydayrepository" />
+        <module name="tripbydayservice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="microservices" target="17" />
+      <module name="TripByDay" target="1.8" />
+      <module name="TripByDayController" target="17" />
+      <module name="TripByDayRepository" target="17" />
+      <module name="TripByDayService" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="TripByDay" options="-parameters" />
+      <module name="TripByDayController" options="-parameters" />
+      <module name="TripByDayRepository" options="-parameters" />
+      <module name="TripByDayService" options="-parameters" />
+      <module name="microservices" options="-parameters" />
+      <module name="tripbydaycontroller" options="-parameters" />
+      <module name="tripbydayrepository" options="-parameters" />
+      <module name="tripbydayservice" options="-parameters" />
+    </option>
+  </component>
+</project>
